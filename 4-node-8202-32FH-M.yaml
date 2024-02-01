@@ -1,0 +1,73 @@
+# topology
+#
+#    linux0--r00--r01
+#             | \/ |
+#             | /\ |
+#            r02--r03
+
+simulation:
+  # specify sim_dir if user start several simulations on same server
+  #sim_dir: /nobackup/vxr/pyvxr/8201-32FH
+  #skip_auto_bringup: True
+  no_image_copy: True
+  rollback_xr_user: True
+
+devices:
+
+  router0:
+    platform: spitfire_f
+    linecard_types: [8202-32FH-M]
+    image: /home/brmcdoug/vxr-img/8000-golden-x86_64-24.1.1.40I-PROD_BUILD_24_1_1_40I_SIT_IMAGE-8202-32FH-M.qcow2
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.113.1'
+        ConfigS1SdkVer: '1.59.1.12'
+
+  router1:
+    platform: spitfire_f
+    linecard_types: [8202-32FH-M]
+    image: /home/brmcdoug/vxr-img/8000-golden-x86_64-24.1.1.40I-PROD_BUILD_24_1_1_40I_SIT_IMAGE-8202-32FH-M.qcow2
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.113.1'
+        ConfigS1SdkVer: '1.59.1.12'
+
+  router2:
+    platform: spitfire_f
+    linecard_types: [8202-32FH-M]
+    image: /home/brmcdoug/vxr-img/8000-golden-x86_64-24.1.1.40I-PROD_BUILD_24_1_1_40I_SIT_IMAGE-8202-32FH-M.qcow2
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.113.1'
+        ConfigS1SdkVer: '1.59.1.12'
+
+  router3:
+    platform: spitfire_f
+    linecard_types: [8202-32FH-M]
+    image: /home/brmcdoug/vxr-img/8000-golden-x86_64-24.1.1.40I-PROD_BUILD_24_1_1_40I_SIT_IMAGE-8202-32FH-M.qcow2
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.113.1'
+        ConfigS1SdkVer: '1.59.1.12'
+
+connections:
+    hubs:
+        h0:
+        - router0.FourHundredGigE0/0/0/[0..1]
+        - router1.FourHundredGigE0/0/0/[0..1]
+        h1:
+        - router0.FourHundredGigE0/0/0/[2..3]
+        - router2.FourHundredGigE0/0/0/[0..1]
+        h2:
+        - router1.FourHundredGigE0/0/0/[2..3]
+        - router3.FourHundredGigE0/0/0/[0..1]
+        h3: 
+        - router2.FourHundredGigE0/0/0/[2..3]
+        - router3.FourHundredGigE0/0/0/[2..3]
+        h4: 
+        - router0.FourHundredGigE0/0/0/[4..5]
+        - router3.FourHundredGigE0/0/0/[4..5]
+        h5: 
+        - router1.FourHundredGigE0/0/0/[4..5]
+        - router2.FourHundredGigE0/0/0/[4..5]
+
