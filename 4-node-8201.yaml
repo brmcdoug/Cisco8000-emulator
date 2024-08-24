@@ -72,5 +72,5 @@ connections:
       linux_bridge: ce1
 
     ce2:
-      ports: [leaf-2.FourHundredGigE0/0/0/1]
+      ports: [leaf2.FourHundredGigE0/0/0/1]
       linux_bridge: ce2
