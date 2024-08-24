@@ -1,0 +1,76 @@
+# topology
+#
+#               rr1
+#                |
+#             spine1
+#             /     \
+#    ce1--leaf1     leaf2--ce2
+#
+
+simulation:
+   no_image_copy: true
+
+devices:
+  leaf1:
+    image: /home/cisco/images/8000-golden-x86_64-24.1.2-Oracle.iso
+    cvac: config/leaf1.cfg
+    platform: spitfire_f
+    linecard_types: [8201-32FH]
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.151.3'
+        ConfigS1SdkVer: '1.71.1.16'
+
+  leaf2:
+    image: /home/cisco/images/8000-golden-x86_64-24.1.2-Oracle.iso
+    cvac: config/leaf2.cfg
+    platform: spitfire_f
+    linecard_types: [8201-32FH]
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.151.3'
+        ConfigS1SdkVer: '1.71.1.16'
+
+  spine1:
+    image: /home/cisco/images/8000-golden-x86_64-24.1.2-Oracle.iso
+    cvac: config/spine1.cfg
+    platform: spitfire_f
+    linecard_types: [8201-32FH]
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.151.3'
+        ConfigS1SdkVer: '1.71.1.16'
+
+  rr1:
+    image: /home/cisco/images/8000-golden-x86_64-24.1.2-Oracle.iso
+    cvac: config/rr1.cfg
+    platform: spitfire_f
+    linecard_types: [8201-32FH]
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.151.3'
+        ConfigS1SdkVer: '1.71.1.16'
+
+connections:
+  hubs:
+    l1s1:         
+      - leaf1.FourHundredGigE0/0/0/0
+      - spine1.FourHundredGigE0/0/0/0
+
+    l2s1:         
+      - leaf2.FourHundredGigE0/0/0/0
+      - spine1.FourHundredGigE0/0/0/1
+
+    rr1s1:
+      - rr1.FourHundredGigE0/0/0/0
+      - spine1.FourHundredGigE0/0/0/2
+
+  custom:
+
+    ce1:
+      ports: [leaf1.FourHundredGigE0/0/0/1]
+      linux_bridge: ce1
+
+    ce2:
+      ports: [leaf-2.FourHundredGigE0/0/0/1]
+      linux_bridge: ce2
