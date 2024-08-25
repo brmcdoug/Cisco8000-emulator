@@ -224,7 +224,7 @@ root@c6100d1cbb44:/#
 Truncated brctl show output:
 ```
 ce2		8000.5e8491331a59	no		H0UNCU00JLVW2C2
-							            veth29a5d5a       <-------- docker container eth0
+							veth29a5d5a       <-------- docker container eth0
 
 ```
 
