@@ -10,8 +10,8 @@
 name: clab8000e
 
 mgmt:
-  network: virbr0
-  ipv4-subnet: 192.168.122.0/24
+  network: mgmt
+  ipv4-subnet: 192.168.124.0/24
 
 topology:
 
@@ -22,23 +22,23 @@ topology:
   nodes:
     leaf1:
       kind: linux
-      mgmt-ipv4: 192.168.122.101
-      binds: [config/leaf1.cfg:ro]
+      mgmt-ipv4: 192.168.124.101
+      binds: [config/leaf1.cfg:/startup.cfg:ro]
 
     leaf2:
       kind: linux
-      mgmt-ipv4: 192.168.122.103
-      binds: [config/leaf2.cfg:ro]
+      mgmt-ipv4: 192.168.124.103
+      binds: [config/leaf2.cfg:/startup.cfg:ro]
 
     spine1:
       kind: linux
-      mgmt-ipv4: 192.168.122.102
-      binds: [config/spine1.cfg:ro]
+      mgmt-ipv4: 192.168.124.102
+      binds: [config/spine1.cfg:/startup.cfg:ro]
 
     rr1:
       kind: linux
-      mgmt-ipv4: 192.168.122.100
-      binds: [config/rr1.cfg:ro]
+      mgmt-ipv4: 192.168.124.100
+      binds: [config/rr1.cfg:/startup.cfg:ro]
 
   links:
     - endpoints: ["leaf1:FH0_0_0_0", "spine1:FH0_0_0_0"]
