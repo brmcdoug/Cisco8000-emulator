@@ -42,7 +42,7 @@ topology:
 
   links:
     - endpoints: ["leaf1:FH0_0_0_0", "spine1:FH0_0_0_0"]
-    - endpoints: ["leaf2:FH0_0_0_1", "spine1:FH0_0_0_1"]
-    - endpoints: ["rr1:FH0_0_0_1", "spine1:FH0_0_0_2"]
+    - endpoints: ["leaf2:FH0_0_0_0", "spine1:FH0_0_0_1"]
+    - endpoints: ["rr1:FH0_0_0_0", "spine1:FH0_0_0_2"]
 
 
