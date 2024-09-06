@@ -1,0 +1,49 @@
+# topology
+#
+#               rr1
+#                |
+#             spine1
+#             /     \
+#    ce1--leaf1     leaf2--ce2
+#
+
+name: clab8000e
+
+mgmt:
+  network: mgt_net
+  ipv4-subnet: 172.20.6.0/24
+  ipv6-subnet: 2001:db8:20:6::/64
+
+topology:
+
+  kinds:
+    linux:
+      image: 8201-32fh_clab293:latest
+
+  nodes:
+    leaf1:
+      kind: linux
+      mgmt-ipv4: 172.20.6.101
+      binds: [config/leaf1.cfg:ro]
+
+    leaf2:
+      kind: linux
+      mgmt-ipv4: 172.20.6.102
+      binds: [config/leaf2.cfg:ro]
+
+    spine1:
+      kind: linux
+      mgmt-ipv4: 172.20.6.103
+      binds: [config/spine1.cfg:ro]
+
+    rr1:
+      kind: linux
+      mgmt-ipv4: 172.20.6.104
+      binds: [config/rr1.cfg:ro]
+
+  links:
+    - endpoints: ["leaf1:FH0_0_0_0", "spine1:FH0_0_0_0"]
+    - endpoints: ["leaf2:FH0_0_0_1", "spine1:FH0_0_0_1"]
+    - endpoints: ["rr1:FH0_0_0_1", "spine1:FH0_0_0_2"]
+
+
