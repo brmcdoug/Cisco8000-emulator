@@ -62,35 +62,35 @@ devices:
 connections:
   hubs:
     r1r2:         
-      - r01.EightHundredGigE0/0/0/0
-      - r02.EightHundredGigE0/0/0/0
+      - r01.FourHundredGigE0/0/0/0/0
+      - r02.FourHundredGigE0/0/0/0/0
 
     r1r4:         
-      - r01.EightHundredGigE0/0/0/1
-      - r04.EightHundredGigE0/0/0/0
+      - r01.FourHundredGigE0/0/0/0/1
+      - r04.FourHundredGigE0/0/0/0/0
 
     r2r3:         
-      - r02.EightHundredGigE0/0/0/1
-      - r03.EightHundredGigE0/0/0/0
+      - r02.FourHundredGigE0/0/0/0/1
+      - r03.FourHundredGigE0/0/0/0/0
 
     r2r4:         
-      - r02.EightHundredGigE0/0/0/2
-      - r04.EightHundredGigE0/0/0/1
+      - r02.FourHundredGigE0/0/0/0/2
+      - r04.FourHundredGigE0/0/0/0/1
 
     r3r5:         
-      - r03.EightHundredGigE0/0/0/1
-      - r05.EightHundredGigE0/0/0/0
+      - r03.FourHundredGigE0/0/0/0/1
+      - r05.FourHundredGigE0/0/0/0/0
 
     r4r5:         
-      - r04.EightHundredGigE0/0/0/2
-      - r05.EightHundredGigE0/0/0/1
+      - r04.FourHundredGigE0/0/0/0/2
+      - r05.FourHundredGigE0/0/0/0/1
 
   custom:
 
     ce1:
-      ports: [r01.EightHundredGigE0/0/0/2]
+      ports: [r01.FourHundredGigE0/0/0/0/2]
       linux_bridge: ce1
 
     ce2:
-      ports: [r05.EightHundredGigE0/0/0/2]
+      ports: [r05.FourHundredGigE0/0/0/0/2]
       linux_bridge: ce2
