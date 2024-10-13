@@ -74,7 +74,7 @@ connections:
       - r03.FourHundredGigE0/0/0/0/0
 
     r2r4:         
-      - r02.FourHundredGigE0/0/0/0/2
+      - r02.FourHundredGigE0/0/0/2/0
       - r04.FourHundredGigE0/0/0/0/1
 
     r3r5:         
@@ -82,15 +82,15 @@ connections:
       - r05.FourHundredGigE0/0/0/0/0
 
     r4r5:         
-      - r04.FourHundredGigE0/0/0/0/2
+      - r04.FourHundredGigE0/0/0/2/0
       - r05.FourHundredGigE0/0/0/0/1
 
   custom:
 
     ce1:
-      ports: [r01.FourHundredGigE0/0/0/0/2]
+      ports: [r01.FourHundredGigE0/0/0/2/0]
       linux_bridge: ce1
 
     ce2:
-      ports: [r05.FourHundredGigE0/0/0/0/2]
+      ports: [r05.FourHundredGigE0/0/0/2/0]
       linux_bridge: ce2
