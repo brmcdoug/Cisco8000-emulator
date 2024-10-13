@@ -1,0 +1,5 @@
+devices:
+  R0:
+    platform: spitfire_f
+    linecard_types: ['8101-32FH']
+    image: /auto/vxr/images/spitfire/8000-x64.iso 

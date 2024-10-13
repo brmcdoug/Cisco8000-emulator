@@ -1,0 +1,9 @@
+devices:
+
+  R0:
+    platform: spitfire_f-baked
+    image: /auto/cats4/ovxr-release-git-images-history/8000/xr7/7.3.16/8000-x64-7.3.16.qcow2
+    vxr_sim_config:
+      shelf:
+        ConfigS1NpsuiteVer:  '1.72.8'
+        ConfigS1SdkVer: '1.37.1.19'
