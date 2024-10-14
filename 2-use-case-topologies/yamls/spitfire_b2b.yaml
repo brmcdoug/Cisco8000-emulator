@@ -6,7 +6,7 @@ devices:
     num_linecards: 1
     linecard_types: [corsair]
     image: &image
-        /auto/vxr/images/spitfire/8000-x64.iso
+        /home/cisco/images/8000-x64.iso 
 
   R1:
     platform: spitfire_d

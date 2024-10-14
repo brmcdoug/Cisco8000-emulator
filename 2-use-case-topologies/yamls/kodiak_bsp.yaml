@@ -1,8 +1,0 @@
-devices:
-
-  R0:
-    platform: spitfire_c
-    lcc_type: 8508-f
-    os_type: bsp
-    onie-install: http://172.25.40.161/IMAGES/installer-0.15-6-gb2b210d.el8.bin
-    image: /ws/asr9k-rel0/spitfire/bsp/kodiak/files/onie-recovery-x86_64-cisco_8000-r0-scott.iso

@@ -17,7 +17,7 @@ devices:
     linecard_types:
     - 88-LC1-36EH
     image: &image
-       /auto/vxr/images/spitfire/8000-x64.iso
+       /home/cisco/images/8000-x64.iso 
     pre_config: 'hw-module profile npu-compatibility-force P100'
     pre_cli: 'reload location all noprompt'
 

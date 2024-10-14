@@ -18,7 +18,7 @@ devices:
     linecard_types:
     - 88-LC1-36EH
     image: &image
-        /auto/vxr/images/spitfire/8000-x64.iso
+        /home/cisco/images/8000-x64.iso 
 
 #BB8
   router1:

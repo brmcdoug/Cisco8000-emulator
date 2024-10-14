@@ -4,5 +4,5 @@ devices:
     platform: spitfire_d
     lcc_type: '8812'
     linecard_types: ['8800-lc-48h']
-    image: /auto/vxr/images/spitfire/8000-x64.iso
+    image: /home/cisco/images/8000-x64.iso 
 

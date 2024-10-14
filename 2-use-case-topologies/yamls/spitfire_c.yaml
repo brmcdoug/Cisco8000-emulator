@@ -1,5 +1,5 @@
 devices:
   R0:
     platform: spitfire_c
-    image: /auto/vxr/images/spitfire/8000-x64.iso
+    image: /home/cisco/images/8000-x64.iso 
     linecard_types: ['86-MPA-4FH-M']
